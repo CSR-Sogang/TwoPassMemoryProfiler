@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rm -rf /ssd/ssd_file/*
+rm -rf /home/var/log

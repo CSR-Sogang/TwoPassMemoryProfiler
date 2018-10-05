@@ -1,0 +1,253 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BIG_SIZE	dcalltrack.h	60;"	d
+CALLTRACK_SIZE	dcalltrack.h	/^static const int CALLTRACK_SIZE = MALLOC_SIZE;$/;"	v
+DumpAllHashValues	dcalltrack_mt.cpp	/^inline void DumpAllHashValues() { $/;"	f
+InitHashTable	dcalltrack.h	/^void InitHashTable() {$/;"	f
+InitThreadInfo	dcalltrack_mt.cpp	/^inline void InitThreadInfo(int tid) {$/;"	f
+InitVarIDTable	dcalltrack.h	/^int InitVarIDTable() {$/;"	f
+LookHashTable	dcalltrack.h	/^int LookHashTable(char *str) {$/;"	f
+LookIntoHashValue	dcalltrack.h	/^int LookIntoHashValue(char* str, size_t addr, size_t size) {$/;"	f
+LookVarID	dcalltrack.h	/^int LookVarID(int var_id){$/;"	f
+MALLOC_SIZE	dcalltrack.h	/^static const int MALLOC_SIZE = 0;$/;"	v
+MAX_ARRAY_SIZE	dcalltrack.h	54;"	d
+MAX_HASH_SIZE	dcalltrack.h	56;"	d
+MAX_STRING_LENGTH	dcalltrack.h	55;"	d
+MAX_THREADS	dcalltrack_mt.cpp	11;"	d	file:
+MAX_UNFREE	dcalltrack.h	59;"	d
+MID_SIZE	dcalltrack.h	63;"	d
+MIN_TRACE_SIZE	dcalltrack.h	65;"	d
+OutputVarKthSize	dcalltrack.h	/^size_t OutputVarKthSize() {$/;"	f
+PrintMessage	deepmap.cpp	13;"	d	file:
+PrintMessage	deepmap.cpp	15;"	d	file:
+ReadHashValues	dcalltrack.h	/^void ReadHashValues() {$/;"	f
+ShowStackframeMT	dcalltrack_mt.cpp	/^static inline int ShowStackframeMT(size_t addr, size_t size)$/;"	f	file:
+StringHash	dcalltrack.h	/^unsigned long StringHash(char *str)$/;"	f
+TMP_ARRAY_SIZE	dstack.cpp	/^const int TMP_ARRAY_SIZE = 1024 * 1024 * 20;$/;"	v
+TRACE_COUNT	dcalltrack.h	64;"	d
+VAR_HASH_VALUE_SIZE	dcalltrack.h	66;"	d
+VAR_ID_TABLE_SIZE	dcalltrack.h	67;"	d
+_128K_SIZE	dcalltrack.h	62;"	d
+_128k_count	dcalltrack.h	/^int _128k_count = 0;$/;"	v
+_32K_SIZE	dcalltrack.h	61;"	d
+_32k_count	dcalltrack.h	/^int _32k_count = 0;$/;"	v
+_CALLTRACK_H	calltrack.h	2;"	d
+_DCALLTRACK_H	dcalltrack.c	2;"	d	file:
+_DCALLTRACK_H	dcalltrack.h	2;"	d
+_DCALLTRACK_H	dstack.c	2;"	d	file:
+_DCALLTRACK_H	dstack.cpp	2;"	d	file:
+_DEBUG	deepmap.cpp	10;"	d	file:
+_GNU_SOURCE	dcalltrack.c	4;"	d	file:
+_GNU_SOURCE	dstack.c	4;"	d	file:
+_TRACE	dcalltrack.c	5;"	d	file:
+_TRACE	dcalltrack.h	21;"	d
+_TRACE	dstack.c	5;"	d	file:
+_TRACE	dstack.cpp	5;"	d	file:
+addr	dcalltrack.h	/^    size_t addr;$/;"	m	struct:stc_msg_addr
+allocmap	dcalltrack.c	/^set::map<size_t, size_t> allocmap;$/;"	v
+allocmap	dstack.c	/^std::map<size_t, size_t> allocmap;$/;"	v
+allocmap	dstack.cpp	/^std::map<size_t, size_t> allocmap;$/;"	v
+big_count	dcalltrack.h	/^int big_count = 0;$/;"	v
+calloc	calltrack.c	42;"	d	file:
+calloc	calltrack.c	51;"	d	file:
+calloc	calltrack.h	13;"	d
+calloc	dcalltrack.c	/^void* calloc(size_t nmemb, size_t size)$/;"	f
+calloc	dcalltrack.cpp	/^void* calloc(size_t nmemb, size_t size)$/;"	f
+calloc	dcalltrack_mt.cpp	/^void* calloc(size_t nmemb, size_t size)$/;"	f
+calloc	deepmap.cpp	/^void* calloc(size_t nmemb, size_t size)$/;"	f
+calloc	dstack.c	/^void* calloc(size_t nmemb, size_t size)$/;"	f
+calloc	dstack.cpp	/^void* calloc(size_t nmemb, size_t size)$/;"	f
+calloc_count	dcalltrack.h	/^int calloc_count = 0; \/\/ total calloc object count$/;"	v
+calloc_flag	dcalltrack.c	/^static bool calloc_flag = true;$/;"	v	file:
+calloc_flag	dcalltrack_mt.cpp	/^static bool calloc_flag = true;$/;"	v	file:
+calloc_flag	dstack.c	/^static bool calloc_flag = true;$/;"	v	file:
+calloc_flag	dstack.cpp	/^static bool calloc_flag = true;$/;"	v	file:
+callocp	dcalltrack.c	/^static void* (*callocp) (size_t, size_t) = NULL;$/;"	v	file:
+callocp	dcalltrack.cpp	/^static void* (*callocp) (size_t, size_t) = NULL;$/;"	v	file:
+callocp	dcalltrack_mt.cpp	/^static void* (*callocp) (size_t, size_t) = NULL;$/;"	v	file:
+callocp	deepmap.cpp	/^static void* (*callocp) (size_t, size_t) = NULL;$/;"	v	file:
+callocp	dstack.c	/^static void* (*callocp) (size_t, size_t) = NULL;$/;"	v	file:
+callocp	dstack.cpp	/^static void* (*callocp) (size_t, size_t) = NULL;$/;"	v	file:
+calltrack_calloc	calltrack.c	/^void *calltrack_calloc(size_t nmemb, size_t size)$/;"	f
+calltrack_free	calltrack.c	/^void calltrack_free(void *ptr)$/;"	f
+calltrack_hash_table	dcalltrack.h	/^}calltrack_hash_table[MAX_HASH_SIZE];$/;"	v	typeref:struct:hash_table
+calltrack_malloc	calltrack.c	/^void *calltrack_malloc(size_t size)$/;"	f
+calltrack_realloc	calltrack.c	/^void *calltrack_realloc(void *var, size_t size)$/;"	f
+calltrack_str	dcalltrack.h	/^    char calltrack_str[MAX_STRING_LENGTH];$/;"	m	struct:hash_table
+cfootprint	dstack.cpp	/^double cfootprint = 0;$/;"	v
+cmp	dcalltrack.cpp	/^int cmp(size_t a, size_t b) {$/;"	f
+count	dcalltrack.cpp	/^static int count = 0;$/;"	v	file:
+cstack	dstack.cpp	/^double cstack = 0;$/;"	v
+exist	dcalltrack.h	/^    int exist;$/;"	m	struct:hash_table
+final	dcalltrack.c	/^static void __attribute__ ((destructor)) final()$/;"	f	file:
+final	dcalltrack.cpp	/^static void __attribute__ ((destructor)) final()$/;"	f	file:
+final	dcalltrack_mt.cpp	/^static void __attribute__ ((destructor)) final()$/;"	f	file:
+final	deepmap.cpp	/^static void __attribute__ ((destructor)) final()$/;"	f	file:
+final	dstack.c	/^static void __attribute__ ((destructor)) final()$/;"	f	file:
+final	dstack.cpp	/^static void __attribute__ ((destructor)) final()$/;"	f	file:
+find_in_unfree_list	dcalltrack.cpp	/^int find_in_unfree_list(long int ptr) $/;"	f
+find_ptr	dcalltrack.cpp	/^int find_ptr(size_t ptr) {$/;"	f
+find_ptr	dcalltrack_mt.cpp	/^int find_ptr(size_t ptr) {$/;"	f
+footprint	dcalltrack.c	/^static long long footprint = 0;$/;"	v	file:
+footprint	dcalltrack.h	/^size_t footprint = 0;$/;"	v
+footprint	dstack.c	/^static long long footprint = 0;$/;"	v	file:
+footprint	dstack.cpp	/^static int64_t footprint = 0;$/;"	v	file:
+free	calltrack.c	68;"	d	file:
+free	calltrack.c	77;"	d	file:
+free	calltrack.h	15;"	d
+free	dcalltrack.c	/^void free(void *ptr)$/;"	f
+free	dcalltrack.cpp	/^void free(void* ptr)$/;"	f
+free	dcalltrack_mt.cpp	/^void free(void* ptr)$/;"	f
+free	deepmap.cpp	/^void free(void* ptr)$/;"	f
+free	dstack.c	/^void free(void *ptr)$/;"	f
+free	dstack.cpp	/^void free(void *ptr)$/;"	f
+free_flag	dcalltrack.c	/^static bool free_flag = true;$/;"	v	file:
+free_flag	dcalltrack_mt.cpp	/^static bool free_flag = true;$/;"	v	file:
+free_flag	dstack.c	/^static bool free_flag = true;$/;"	v	file:
+free_flag	dstack.cpp	/^static bool free_flag = true;$/;"	v	file:
+freep	dcalltrack.c	/^static void (*freep) (void*) = NULL;$/;"	v	file:
+freep	dcalltrack.cpp	/^static void (*freep)( void* ) = NULL;$/;"	v	file:
+freep	dcalltrack_mt.cpp	/^static void (*freep)( void* ) = NULL;$/;"	v	file:
+freep	deepmap.cpp	/^static void (*freep)( void* ) = NULL;$/;"	v	file:
+freep	dstack.c	/^static void (*freep) (void*) = NULL;$/;"	v	file:
+freep	dstack.cpp	/^static void (*freep) (void*) = NULL;$/;"	v	file:
+g_lock	dcalltrack_mt.cpp	/^std::mutex g_lock;$/;"	v
+get_flag_unfree_list	dcalltrack.cpp	/^int get_flag_unfree_list(long int ptr) $/;"	f
+get_kth_count	dcalltrack.h	/^size_t get_kth_count() {$/;"	f
+get_mem	dstack.cpp	/^int64_t get_mem(int flag){$/;"	f
+get_stack_rss	dstack.cpp	/^int64_t get_stack_rss() { $/;"	f
+getmem	dcalltrack.c	/^void getmem(){$/;"	f
+getmem	dstack.c	/^void getmem(){$/;"	f
+hash_table	dcalltrack.h	/^struct hash_table$/;"	s
+hash_value	dcalltrack.h	/^    unsigned int hash_value;$/;"	m	struct:hash_table
+id	dcalltrack.h	/^    int id;$/;"	m	struct:hash_table
+in_init	dcalltrack.cpp	/^static bool in_init = false;$/;"	v	file:
+in_init	dcalltrack_mt.cpp	/^static bool in_init = false;$/;"	v	file:
+init	dcalltrack.c	/^static void __attribute__ ((constructor)) init() $/;"	f	file:
+init	dcalltrack.cpp	/^static void __attribute__ ((constructor)) init() $/;"	f	file:
+init	dcalltrack_mt.cpp	/^static void __attribute__ ((constructor)) init() $/;"	f	file:
+init	deepmap.cpp	/^static void __attribute__ ((constructor)) init() $/;"	f	file:
+init	dstack.c	/^static void __attribute__ ((constructor)) init() $/;"	f	file:
+init	dstack.cpp	/^static void __attribute__ ((constructor)) init() $/;"	f	file:
+init_flag	dstack.cpp	/^static int init_flag = 0;$/;"	v	file:
+inited	deepmap.cpp	/^static bool inited = false;$/;"	v	file:
+last_time	dstack.cpp	/^double last_time = 0.0;$/;"	v
+malloc	calltrack.c	30;"	d	file:
+malloc	calltrack.c	40;"	d	file:
+malloc	calltrack.c	53;"	d	file:
+malloc	calltrack.c	65;"	d	file:
+malloc	calltrack.h	12;"	d
+malloc	dcalltrack.c	/^void* malloc(size_t size) $/;"	f
+malloc	dcalltrack.cpp	/^void* malloc(size_t size)$/;"	f
+malloc	dcalltrack_mt.cpp	/^void* malloc(size_t size)$/;"	f
+malloc	deepmap.cpp	/^void* malloc(size_t size)$/;"	f
+malloc	dstack.c	/^void* malloc(size_t size) $/;"	f
+malloc	dstack.cpp	/^void* malloc(size_t size) $/;"	f
+malloc_count	dcalltrack.h	/^int malloc_count = 0; \/\/ total malloc object count$/;"	v
+malloc_flag	dcalltrack.c	/^static bool malloc_flag = true;$/;"	v	file:
+malloc_flag	dcalltrack_mt.cpp	/^static bool malloc_flag = true;$/;"	v	file:
+malloc_flag	dstack.c	/^static bool malloc_flag = true;$/;"	v	file:
+malloc_flag	dstack.cpp	/^static bool malloc_flag = true;$/;"	v	file:
+mallocp	dcalltrack.c	/^static void* (*mallocp) (size_t) = NULL;$/;"	v	file:
+mallocp	dcalltrack.cpp	/^static void* (*mallocp) (size_t) = NULL;$/;"	v	file:
+mallocp	dcalltrack_mt.cpp	/^static void* (*mallocp) (size_t) = NULL;$/;"	v	file:
+mallocp	deepmap.cpp	/^static void* (*mallocp) (size_t) = NULL;$/;"	v	file:
+mallocp	dstack.c	/^static void* (*mallocp) (size_t) = NULL;$/;"	v	file:
+mallocp	dstack.cpp	/^static void* (*mallocp) (size_t) = NULL;$/;"	v	file:
+max_footprint	dcalltrack.h	/^size_t max_footprint = 0;$/;"	v
+max_obj_count	dcalltrack.h	/^size_t max_obj_count = 0;$/;"	v
+max_size	dcalltrack.h	/^size_t max_size = 0;$/;"	v
+max_stack_size	dcalltrack.c	/^static long long max_stack_size = 0;$/;"	v	file:
+max_stack_size	dstack.c	/^static long long max_stack_size = 0;$/;"	v	file:
+max_stack_size	dstack.cpp	/^static int64_t max_stack_size = 0;$/;"	v	file:
+mid_count	dcalltrack.h	/^int mid_count = 0;$/;"	v
+mmapp	dcalltrack.c	/^static void* (*mmapp) (void*, size_t, int, int, int, off_t) = NULL;$/;"	v	file:
+mmapp	dstack.c	/^static void* (*mmapp) (void*, size_t, int, int, int, off_t) = NULL;$/;"	v	file:
+msg_addr	dcalltrack.h	/^} msg_addr;$/;"	v	typeref:struct:stc_msg_addr
+msg_id	dcalltrack.h	/^int msg_id = -1;$/;"	v
+msg_type	dcalltrack.h	/^    long int msg_type;$/;"	m	struct:stc_msg_addr
+mysecond	calltrack.c	/^double mysecond()$/;"	f
+mysecond	dcalltrack.h	/^double mysecond()$/;"	f
+mysecond	dstack.cpp	/^double mysecond()$/;"	f
+obj_count	dcalltrack.h	/^size_t obj_count = 0; \/\/ Current living object count;$/;"	v
+obj_counts	dcalltrack_mt.cpp	/^static uint64_t obj_counts[MAX_THREADS];$/;"	v	file:
+pfootprint	dstack.cpp	/^int64_t pfootprint = 0;$/;"	v
+program_start_time	dcalltrack.h	/^double program_start_time = 0.0;$/;"	v
+pstack	dstack.cpp	/^int64_t pstack = 0;$/;"	v
+realloc	calltrack.c	54;"	d	file:
+realloc	calltrack.c	64;"	d	file:
+realloc	calltrack.h	14;"	d
+realloc	dcalltrack.c	/^void* realloc(void *var, size_t size)$/;"	f
+realloc	dcalltrack.cpp	/^void* realloc(void *var, size_t size)$/;"	f
+realloc	dcalltrack_mt.cpp	/^void* realloc(void *var, size_t size)$/;"	f
+realloc	deepmap.cpp	/^void* realloc(void *var, size_t size)$/;"	f
+realloc	dstack.c	/^void* realloc(void *var, size_t size)$/;"	f
+realloc	dstack.cpp	/^void* realloc(void *var, size_t size)$/;"	f
+realloc_count	dcalltrack.h	/^int realloc_count = 0; \/\/ total realloc object count$/;"	v
+realloc_flag	dcalltrack.c	/^static bool realloc_flag = true;$/;"	v	file:
+realloc_flag	dcalltrack_mt.cpp	/^static bool realloc_flag = true;$/;"	v	file:
+realloc_flag	dstack.c	/^static bool realloc_flag = true;$/;"	v	file:
+realloc_flag	dstack.cpp	/^static bool realloc_flag = true;$/;"	v	file:
+reallocp	dcalltrack.c	/^static void* (*reallocp) (void*, size_t) = NULL;$/;"	v	file:
+reallocp	dcalltrack.cpp	/^static void* (*reallocp)(void*, size_t) = NULL;$/;"	v	file:
+reallocp	dcalltrack_mt.cpp	/^static void* (*reallocp)(void*, size_t) = NULL;$/;"	v	file:
+reallocp	deepmap.cpp	/^static void* (*reallocp)(void*, size_t) = NULL;$/;"	v	file:
+reallocp	dstack.c	/^static void* (*reallocp) (void*, size_t) = NULL;$/;"	v	file:
+reallocp	dstack.cpp	/^static void* (*reallocp) (void*, size_t) = NULL;$/;"	v	file:
+show_stackframe	calltrack.c	/^void show_stackframe(void) {$/;"	f
+show_stackframe	dcalltrack.h	/^static inline int show_stackframe(size_t addr, size_t size)$/;"	f
+show_stackframe	dcalltrack.h	/^static inline int show_stackframe(void) {$/;"	f
+show_stackframe1	dcalltrack.h	/^static inline int show_stackframe1(void) {$/;"	f
+size	dcalltrack.h	/^    size_t size;$/;"	m	struct:stc_msg_addr
+size_array	dcalltrack.h	/^size_t size_array[MAX_ARRAY_SIZE];$/;"	v
+size_t	dcalltrack.c	/^set::map<size_t, size_t> allocmap;$/;"	v
+size_t	dstack.c	/^std::map<size_t, size_t> allocmap;$/;"	v
+start_time	dstack.cpp	/^double start_time = 0.0;$/;"	v
+stc_msg_addr	dcalltrack.h	/^struct stc_msg_addr$/;"	s
+t_calloc_count	dcalltrack_mt.cpp	/^static uint64_t t_calloc_count[MAX_THREADS];$/;"	v	file:
+t_malloc_count	dcalltrack_mt.cpp	/^static uint64_t t_malloc_count[MAX_THREADS];$/;"	v	file:
+t_relloc_count	dcalltrack_mt.cpp	/^static uint64_t t_relloc_count[MAX_THREADS];$/;"	v	file:
+t_trace_flags	dcalltrack_mt.cpp	/^static bool t_trace_flags[MAX_THREADS];$/;"	v	file:
+tmp_array	dcalltrack.cpp	/^char tmp_array[500]; \/\/ for the bug with the pthread program$/;"	v
+tmp_array	dcalltrack_mt.cpp	/^char tmp_array[500000000]; \/\/ for the bug with the pthread program$/;"	v
+tmp_array	deepmap.cpp	/^char tmp_array[500000000]; \/\/ for the bug with the pthread program$/;"	v
+tmp_array	dstack.cpp	/^char tmp_array[TMP_ARRAY_SIZE]; \/\/ for the bug with the pthread $/;"	v
+total_count	dcalltrack.h	/^int total_count = 0; \/\/ total object count;$/;"	v
+total_obj_size	dcalltrack.h	/^size_t total_obj_size = 0;$/;"	v
+total_size	dcalltrack.c	/^static long long total_size = 0;$/;"	v	file:
+total_size	dstack.c	/^static long long total_size = 0;$/;"	v	file:
+total_size	dstack.cpp	/^static int64_t total_size = 0;$/;"	v	file:
+trace_count_array	dcalltrack.h	/^size_t trace_count_array[TRACE_COUNT];$/;"	v
+trace_file	dcalltrack.h	/^static FILE* trace_file = NULL;$/;"	v
+trace_file_fds	dcalltrack_mt.cpp	/^static FILE* trace_file_fds[MAX_THREADS];$/;"	v	file:
+trace_flag	dcalltrack.c	/^static bool trace_flag = true;$/;"	v	file:
+trace_flag	dcalltrack.cpp	/^static bool trace_flag = true;$/;"	v	file:
+trace_flag	dcalltrack_mt.cpp	/^static bool trace_flag = true;$/;"	v	file:
+trace_flag	deepmap.cpp	/^static bool trace_flag = true;$/;"	v	file:
+trace_flag	dstack.c	/^static bool trace_flag = true;$/;"	v	file:
+trace_flag	dstack.cpp	/^static bool trace_flag = true;$/;"	v	file:
+unfree_count	dcalltrack.h	/^size_t unfree_count = 0;$/;"	v
+unfree_list	dcalltrack.h	/^long int unfree_list[MAX_UNFREE];$/;"	v
+update_kth_count	dcalltrack.h	/^void update_kth_count(size_t size) {$/;"	f
+update_var_kth_count	dcalltrack.h	/^void update_var_kth_count(size_t size, int id) {$/;"	f
+var_count	dcalltrack.h	/^size_t var_count = 0; \/\/ Total variable count;$/;"	v
+var_count_array	dcalltrack.h	/^size_t var_count_array[1000][20];$/;"	v
+var_count_trans	dcalltrack.h	/^static int var_count_trans[100]; \/\/temp add.$/;"	v
+var_hash_value_size	dcalltrack.h	/^size_t var_hash_value_size = 0;$/;"	v
+var_hash_value_size_array	dcalltrack.h	/^size_t var_hash_value_size_array[VAR_HASH_VALUE_SIZE][10];$/;"	v
+var_hash_value_table	dcalltrack.h	/^size_t var_hash_value_table[VAR_HASH_VALUE_SIZE];$/;"	v
+var_id_size	dcalltrack.h	/^size_t var_id_size = 0;$/;"	v
+var_id_table	dcalltrack.h	/^int var_id_table[VAR_ID_TABLE_SIZE];$/;"	v
+var_outfile	dcalltrack.h	/^static FILE* var_outfile = NULL;$/;"	v
+var_ptr_for_time	dcalltrack.h	/^size_t var_ptr_for_time[20];$/;"	v
+var_time_count	dcalltrack.h	/^int var_time_count = 0;$/;"	v
+var_time_init	dcalltrack.h	/^void var_time_init() {$/;"	f
+variable_end_time	dcalltrack.h	/^double variable_end_time[20];$/;"	v
+variable_start_time	dcalltrack.h	/^double variable_start_time[20];$/;"	v
+vm_data_size	dstack.cpp	/^static int64_t vm_data_size = 0;$/;"	v	file:
+write_addr_init	dcalltrack.h	/^void write_addr_init() {$/;"	f
+write_down_addr	dcalltrack.h	/^void write_down_addr(size_t addr, size_t size) {$/;"	f

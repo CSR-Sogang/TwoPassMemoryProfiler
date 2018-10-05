@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#time $*
+source ~/Config
+time LD_PRELOAD=$DEEPMAP_REPO/calltrack/libdcalltrack_mt.so $*

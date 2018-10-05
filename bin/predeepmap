@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#time $*
+#mkdir /home/var/log
+source ~/Config
+time LD_PRELOAD=$DEEPMAP_REPO/calltrack/libdeepmap.so $*

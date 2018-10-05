@@ -1,0 +1,11 @@
+title SSD
+	Name		: SSD1
+	Device		: /dev/sdc
+	Mounted on	: /mnt/nvme1
+	File System	: ext4
+
+title SSD
+	Name		: SSD2
+	Device		: /dev/nvm0n1
+	Mounted on	: /mnt/ssd1
+	File System	: ext4

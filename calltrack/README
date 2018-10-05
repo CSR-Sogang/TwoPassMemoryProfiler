@@ -1,0 +1,14 @@
+
+1. build the library
+	make
+
+2. clean the directory
+	make clean
+
+3. build the example
+	gcc -pg -rdynamic example.c -L. -lcalltrack -o example
+
+4. run the example
+	./example
+
+Change the macro VAR_HASH_VALUE_SIZE in "./src/dcalltrack.h" to the number of your tracking objects.

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#time $*
+rm Pointer_*
+source ~/Config
+time LD_PRELOAD=$DEEPMAP_REPO/calltrack/libgetalloc.so $*

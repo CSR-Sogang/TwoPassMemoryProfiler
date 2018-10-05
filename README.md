@@ -34,11 +34,11 @@ Step 1: Clone Deepmap
 
 Step 2: Downloaded pin-tool version 2.14
 
-Step 3: Go to ‘NVMallocLibrary’ directory and build (this will make necessary object file of libnvm.a)
+Step 3: Build ‘NVMallocLibrary’
 
 -	(In ‘Deepmap/NVMallocLibrary/’) make
 
-Step 4: Go to ‘calltrack’ directory and build
+Step 4: Build ‘calltrack’
 
 -	(In ‘Deepmap/calltrack/’) make
 
@@ -46,7 +46,7 @@ Step 5: Change path in ./bin/Config to your current Deepmap directory and copy t
 
 -	(In ‘Deepmap/’) echo  DEEPMAP_REPO=`pwd`  >  ./bin/Config
 
--	(In ‘Deepmap/bin/’) cp  Config  ~/
+-	(In ‘Deepmap/’) cp  ./bin/Config  ~/
 
 Step 6: Edit deepmap/pin-tools/Config/makefile.unix.config. 
 Find PIN_ROOT variable and change its value from 
@@ -56,7 +56,7 @@ Find PIN_ROOT variable and change its value from
 Change PIN_ROOT from ‘/home/matrix/Softwares/pin-2.14-71313-gcc.4.4.7-linux’ 
 to ‘/home/Path_to_IntelPintool’
 
-Step 7: Go to ‘pin-tools’ directory and build
+Step 7: Build ‘pin-tools’
 
 -	(In ‘Deepmap/pin-tools/’) make
 
@@ -71,13 +71,10 @@ Step 9: Run the fast pass on your target application (absolute path is recommend
 Step 10: Pick your target variables to profile. Create ‘HashValues’ and ‘VarMinSize’ files to store hash values and sizes of 
 only target variables.
 
--	(In ‘Deepmap/’) python extract.py
-
--	(In ‘Deepmap/HashValues and Deepmap/VarMinSize) select the target variables which you want to profile and remove the others 
-in both files.
+-	(In ‘Deepmap/’) python offline_process_ex.py
 
 Step 11: Run the slow pass on your target application (for example, ‘Deepmap/calltrack/example.c’)
 
--	(In ‘Deepmap/’) ./bin/preslow  /home/Path_to_IntelPintool/linux/intel64/bin/pinbin  -t  /home/Path-to-deepmap-directory/Deepmap/pin-tools/obj-intel64/pintool.so  --  /home/Path-to-deepmap-directory/Deepmap/calltrack/example
+-	(In ‘Deepmap/’) ./bin/preslow  /home/Path_to_IntelPintool/intel64/bin/pinbin  -t  /home/Path-to-deepmap-directory/Deepmap/pin-tools/obj-intel64/pintool.so  --  /home/Path-to-deepmap-directory/Deepmap/calltrack/example
 
 Step 12: After successful run of slow Pass, you can see your profiling result in ‘result-all-major’ file

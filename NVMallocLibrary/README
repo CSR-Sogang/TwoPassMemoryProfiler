@@ -1,0 +1,19 @@
+
+1. build the library
+	make
+   libnvm.a is generated.
+
+2. cleanup the directory
+	make clean
+
+3. change the configure file: nvm_config
+
+4. include src/nvm.h in your .c files
+
+5. call nvm_init() at the beginning of your main() function
+
+6. call nvm_exit() at the end of your main() function
+
+7. compile your program
+	gcc example.c -L. -lnvm -o example
+
