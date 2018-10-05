@@ -1,7 +1,13 @@
-# TwoPassMemoryProfiler - Deepmap (Underdevelopment)
+TwoPassMemoryProfiler - Deepmap (Underdevelopment)
+====================================================
+Introduction
+------------
 A holistic memory access profiling approach to enable a better understanding of program-system memory interactions. 
-We have developed a two-pass tool adopting fast online and slow offline profiling, with which we have profiled at 
-the variable/object level.
+We have developed a two-pass tool adopting fast online and slow offline profiling, with which we have profiled at the variable/object level.
+
+Publication
+-----------
+
 For details about the design and implementation of Two Pass Memory Profiler, please refer to the [publication].(https://dl.acm.org/citation.cfm?id=3126908.3126917)
 
 Deepmap is the memory profiling tool in object-level. It shows how variables allocated dynamically are accessed in 
@@ -36,11 +42,11 @@ Step 2: Downloaded pin-tool version 2.14
 
 Step 3: Build ‘NVMallocLibrary’
 
--	(In ‘Deepmap/NVMallocLibrary/’) make
+-	(In *‘Deepmap/NVMallocLibrary/’*) make
 
 Step 4: Build ‘calltrack’
 
--	(In ‘Deepmap/calltrack/’) make
+-	(In *‘Deepmap/calltrack/’*) make
 
 Step 5: Change path in ./bin/Config to your current Deepmap directory and copy the config file to home directory.
 
