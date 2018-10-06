@@ -1,4 +1,4 @@
-__TwoPassMemoryProfiler - Deepmap__
+__Two Pass Memory Profiler - Deepmap__
 ====================================
 A holistic memory profiling approach to enable a thorough understanding on memory access patterns of target application. 
 
