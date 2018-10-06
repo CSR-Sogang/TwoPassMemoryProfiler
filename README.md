@@ -91,7 +91,10 @@ Dependencies
   - Python 2.7
 
 
-Publication
+Acknowledgement
 ------------
+This work is published in the conference of Supercomputing 2017. The Authors and the link of publication:
 #### Ji, Xu, Chao Wang, Nosayba El-Sayed, Xiaosong Ma, Youngjae Kim, Sudharshan S. Vazhkudai, Wei Xue and Daniel Sánchez. “Understanding object-level memory access patterns across the spectrum.” SC (2017). [more](https://dl.acm.org/citation.cfm?id=3126908.3126917)
+
+This github page is managed by the Laboratory of Advanced System Software [LASS](https://lass.sogang.ac.kr/)
 
