@@ -59,14 +59,8 @@ static int32_t in_alloc = 0;
 #endif
 int64_t G_var_size;
 static int64_t ins_count = 0;
-//static int64_t flag_modified = 0;  ///// To count dirty ratio (for selective write)
-//static int64_t flag_modified_buffer = 0;  ///// To count dirty ratio (for exact selective write)
-///// To count dirty cache line (for partial write)
-//static int64_t flag_modified_cache_inbuffer[CACHE_LINE_COUNT_INBUFFER];
 
 int64_t dirty_page_count = 0;
-int64_t dirty_page_count_buffer[MAX_SIZE];
-int64_t dirty_cacheline_count_total[MAX_SIZE];
 int64_t last_access_page_total = -1;
 
 int64_t last_access_page[MAX_SIZE];
@@ -116,7 +110,7 @@ static int64_t start_num_inst[MAX_SIZE];
 static int64_t end_num_inst[MAX_SIZE];
 
 int num_episode = 0;
-/////// count : index of variable
+/////// count : index of object
 size_t count = 0; 
 size_t hash_count = 0;
 int msg_id = -1;
@@ -391,35 +385,6 @@ inline VOID GetMetrics(VOID * addr, size_t size, int obj_id, int flag) {
     UpdateSeqVolume(obj_id, (size_t) addr, size);
     UpdateTime(obj_id);
 
-/*
-    ///// In case of total page change, not only inside of variable (same with row buffer change)
-    ///// This is for considering exact selective write and partial write
-    if ((int64_t)npage != last_access_page_total) {
-
-        last_access_page_total = npage;
-
-        ///// This is for checking total cache line changed (for partial write)
-        for (size_t i = 0; i < CACHE_LINE_COUNT_INBUFFER; i++) {
-            //// Increment dirty cache line count with its flag
-            if (flag_modified_cache_inbuffer[i] == 1) {
-                dirty_cacheline_count_total ++;
-
-                //// Initialize the dirty cache line flags
-                flag_modified_cache_inbuffer[i] = 0;
-            }
-
-        }
-        ///// This is for checking total cache line changed (for partial write)
-        for (size_t i = 0; i < CACHE_LINE_COUNT_INBUFFER; i++)
-            //// Initialize the dirty cache line flags
-            if (flag_modified_cache_inbuffer[i] == 1)
-                flag_modified_cache_inbuffer[i] = 0;
-
-        //// Increment dirty page count
-        if (flag_modified_buffer)
-            flag_modified_buffer = 0;
-    }
-*/
     if ((int64_t) npage != last_access_page[obj_id]) { 
         
         UpdateTouchCount(obj_id);
@@ -430,38 +395,10 @@ inline VOID GetMetrics(VOID * addr, size_t size, int obj_id, int flag) {
 
         ////// last_access_page[N] (M) : M-th page which N-th object access at last
         last_access_page[obj_id] = npage;
-
-/*
-        ////// If the previous page is dirty,
-        ////// increment dirty page count and unset the flag_modified.
-        if (flag_modified)
-            flag_modified = 0;
-*/
-
     }
     ////// flag = 1 : Case of write
-    if (flag == 1) {
+    if (flag == 1)
         UpdateDirtyCount(obj_id);
-
-/*
-        if (!flag_modified) {
-            dirty_page_count ++;
-            flag_modified = 1;
-        }
-        
-        //// Increment dirty page count instead of row buffer with its flag (selective write)
-        if (!flag_modified_buffer) {
-            dirty_page_count_buffer[obj_id] ++;
-            flag_modified_buffer = 1;
-        }
-
-        //// Increment dirty cache line count with its flag (partial write)
-        if (!flag_modified_cache_inbuffer[cache_line%CACHE_LINE_COUNT_INBUFFER]) {
-            dirty_cacheline_count_total[obj_id] ++;          
-            flag_modified_cache_inbuffer[cache_line%CACHE_LINE_COUNT_INBUFFER] = 1;
-        }
-*/
-    }
     
     ////// flag = 0 : Case of read
     if (flag == 0)
@@ -477,8 +414,6 @@ VOID InitVariable(size_t obj_id) {
     gettimeofday(&start, NULL);
     reference_count[obj_id] = 0;
     last_access_page[obj_id] = -1;
-    dirty_page_count_buffer[obj_id] = 0;
-    dirty_cacheline_count_total[obj_id] = 0;
     touch_count[obj_id] = 0;
     dirty_count[obj_id] = 0;
     page_offsets[obj_id] = 0;
@@ -641,55 +576,7 @@ VOID Output() {
             DataFile << references_perpage[i][j] << std::endl;
         DataFile << std::endl;
     }    
-/*
-    TraceFile << std::endl << "dirty_page_count (For selective write in case of same objects)" << std::endl;
-    TraceFile << dirty_page_count << endl;
-
-    TraceFile << std::endl << "Just dirty count" << std::endl;
-    size_t temp = 0;
-    for (size_t i = 0; i < count; i++)
-      temp += dirty_count[i];
-    TraceFile << "\t" << temp << std::endl;
-   
-    TraceFile << std::endl << " Total changed pages count (For exact selective write)" << std::endl;
-    TraceFile << dirty_page_count_buffer << endl;
-
-    TraceFile << std::endl << " Total dirty cache lines count in page (For partial write)" << std::endl;
-    TraceFile << dirty_cacheline_count_total << endl;
-*/
 }
-
-/*
-VOID OutputEnergy() {
-
-    TraceFile << count << std::endl;
-    TraceFile << "Size" << std::endl;
-    for (size_t i = 0; i < count; i++) 
-        TraceFile << i << "\t" << var_size[i] << std::endl;
-
-    TraceFile << std::endl << "Total accessed volume" << std::endl;
-    for (size_t i = 0; i < count; i++) 
-        TraceFile << i << "\t" << access_volume[i] << endl;
-  
-    TraceFile << std::endl << "Count of changed pages inside of variable (For selective write)" << std::endl;
-    for (size_t i = 0; i < count; i++) 
-        TraceFile << i << "\t" << dirty_page_count_buffer[i] << endl;
-
-    TraceFile << std::endl << " Total dirty cache lines count in page (For partial write)" << std::endl;
-    for (size_t i = 0; i < count; i++) 
-        TraceFile << i << "\t" << dirty_cacheline_count_total[i] << endl;
-
-    TraceFile << std::endl << "Just \"dirty\" count (For reference)" << std::endl;
-    size_t temp = 0;
-    for (size_t i = 0; i < count; i++)
-      temp += dirty_count[i];
-    TraceFile << "\t" << temp << std::endl;
-   
-    //TraceFile << std::endl << " Total changed pages count (For exact selective write)" << std::endl;
-    //TraceFile << dirty_page_count_buffer << endl;
-
-}
-*/
 
 VOID ChangeAllocStat() {
 #ifdef READ_ADDR_FILE
@@ -705,11 +592,8 @@ VOID ChangeAllocStat() {
 ///// msg_type: long int
 ///// addr: size_t
 ///// size: size_t
-///// hash value: unsigned long
 VOID inline TestAndGetAddr() {
 #ifdef READ_ADDR_FILE
-    //size_t msg_size = sizeof(long int) + 2*sizeof(size_t) + sizeof(unsigned long);
-    //int res = msgrcv(msg_id, (void*) &msg_addr, msg_size, 0, IPC_NOWAIT);
     int res = msgrcv(msg_id, (void*) &msg_addr, 16, 0, IPC_NOWAIT);
 
     if (res > 0) {

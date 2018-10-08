@@ -126,18 +126,14 @@ struct stc_msg_addr
     long int msg_type;
     size_t size;
     size_t addr;
-    //unsigned long hash;
 } msg_addr;
 
 void write_down_addr(size_t addr, size_t size, unsigned long hash) {
-    //size_t msg_size = sizeof(long int) + 2*sizeof(size_t) + sizeof(unsigned long);
 
     msg_addr.msg_type = 1;
     msg_addr.addr = addr;
     msg_addr.size = size;
-    //msg_addr.hash = hash;
 
-    //if (msgsnd(msg_id, (void*) &msg_addr, msg_size, 0) == -1) {
     if (msgsnd(msg_id, (void*) &msg_addr, 16, 0) == -1) {
       printf("Error in send the message!\n");
     }
